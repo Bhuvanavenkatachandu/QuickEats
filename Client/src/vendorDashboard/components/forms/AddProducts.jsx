@@ -46,25 +46,21 @@ const AddProducts = () => {
 
       const response = await fetch(`${API_URL}/product/add-product/${firmId}`, {
         method: 'POST',
-        body: formData,
-        headers: {
-          'token': loginToken
-        }
+        body: formData
       });
 
       const data = await response.json();
 
       if (response.ok) {
         alert("Product added successfully");
+      }
         setProductName("");
         setPrice("");
         setCategory([]);
         setBestSeller(false);
         setDescription("");
         setFile(null);
-      } else {
-        alert(data.message || "Failed to add product");
-      }
+        
     } catch (error) {
       console.error("Error adding product:", error);
       alert("Failed to add product");

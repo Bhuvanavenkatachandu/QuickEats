@@ -58,17 +58,21 @@ const AddFirm = () => {
       const data=await response.json();
       if(response.ok){
         console.log(data);
-        alert("Firm added successfully");
         setFirmName("");
         setArea("");
         setCategory([]);
         setRegion([]);
         setOffer("");
         setfile(null);
-        localStorage.setItem('firmId',data.firmId);
-      }else{
-        alert(data.message||"Failed to add firm");
-      }
+        alert("Firm added successfully");
+      }else if(data.message === "vendor can have only one firm"){
+              alert("Firm Exists 🥗. Only 1 firm can be added  ")
+          } else{
+              alert('Failed to add Firm')
+          }
+          const firmId = data.firmId;
+          localStorage.setItem('firmId', firmId);
+          window.location.reload();
     }catch(error){
       console.error("Error submitting form:",error);
       alert("Failed to submit form");

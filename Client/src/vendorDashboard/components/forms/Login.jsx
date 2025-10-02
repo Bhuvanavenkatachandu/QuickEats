@@ -19,11 +19,20 @@ const Login = ({showWelcomeHandler}) => {
       const data=await response.json();
       if(response.ok){
         alert("login success");
-        localStorage.setItem("loginToken",data.token)
         setEmail("");
         setPassword("");
+        localStorage.setItem("loginToken",data.token);
         showWelcomeHandler();
       }
+      const vendorId = data.vendorId
+      console.log("checking for VendorId:",vendorId)
+      const vendorResponse = await fetch(`${API_URL}/vendor/single-vendor/${vendorId}`)
+      const vendorData = await vendorResponse.json();
+      if(vendorResponse.ok){
+        const vendorFirmId = vendorData.vendorFirmId;
+        localStorage.setItem('firmId', vendorFirmId);
+      }
+      window.location.reload();
     } catch (error) {
       console.error(error);
     }

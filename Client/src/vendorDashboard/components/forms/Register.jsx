@@ -22,20 +22,20 @@ const Register = ({showLoginHandler}) => {
     const data=await response.json()  // assign data int json format
     if(response.ok){
       console.log(data);
-      alert("vendor registered successfully..");
       setUsername("");
       setEmail("");
       setPassword("");
+      alert("vendor registered successfully..");
       showLoginHandler();
     }
     } catch (error) {
-      console.error("registeration failed...",error);
-      alert("regestration failed")
+      console.error("Registration failed...", error);
+      alert("Registration failed");
     }
   }
 
   return (
-    <div className="regesterSection">
+    <div className="registerSection">
         <form className='authForm' onSubmit={handleSubmit}>
             <h3>Vendor Register</h3>
             <label>Username</label>
