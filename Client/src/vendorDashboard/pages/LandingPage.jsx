@@ -17,6 +17,14 @@ const LandingPage = () => {
   const[showWelcome,setShowWelcome]=useState(true);
   const[showAllProducts, setShowAllProducts]=useState(false);
   const[showLogout,setShowLogout]=useState(false);
+  const[showFirmTitle,setShowFirmTitle]=useState(true);
+
+  useEffect(()=>{
+    const firmName = localStorage.getItem('firmName');
+    if(firmName){
+        setShowFirmTitle(false);
+    }
+  },[]);
 
   useEffect(()=>{
     const loginToken = localStorage.getItem('loginToken');
@@ -29,25 +37,37 @@ const LandingPage = () => {
     confirm("Are you sure you want to logout?");
     localStorage.removeItem('loginToken');
     localStorage.removeItem('firmId');
+    localStorage.removeItem('firmName');
     setShowLogout(false);
+    setShowFirmTitle(true);
   }
 
 
   const showAddProductsHandller =()=>{
+    if(showLogout){
     setShowAddProducts(true);
     setShowAddFirm(false);
     setShowRegister(false);
     setShowLogin(false);
     setShowWelcome(false);
     setShowAllProducts(false);
+    }else{
+        alert('Please login to add products');
+        setShowLogin(true);
+    }
   }
   const showAddFirmHandler =()=>{
+    if(showLogout){
     setShowAddFirm(true);
     setShowAddProducts(false);
     setShowRegister(false);
     setShowLogin(false);
     setShowWelcome(false);
     setShowAllProducts(false);
+    }else{
+        alert('Please login to add firm');
+        setShowLogin(true);
+    }
   }
 
   const showLoginHandler =()=>{
@@ -78,21 +98,28 @@ const LandingPage = () => {
   }
 
   const showAllProductsHandler = () => {
+    if(showLogout){
     setShowRegister(false);
     setShowLogin(false);
     setShowAddFirm(false);
     setShowAddProducts(false);
     setShowWelcome(false);
     setShowAllProducts(true);
+    }else{
+        alert('Please login to view products');
+        setShowLogin(true);
+    }
   };
 
 
   return (
     <>
     <section className="landing-section">
-        <NavBar showLoginHandler = {showLoginHandler} showRegisterHandler={showRegisterHandler} showLogout={showLogout} logoutHandler={logoutHandler} />
+        <NavBar showLoginHandler = {showLoginHandler} showRegisterHandler={showRegisterHandler} showLogout={showLogout} 
+        logoutHandler={logoutHandler} />
         <div className="collectionSection">
-        <SideBar showAddFirmHandler={showAddFirmHandler} showAddProductsHandller={showAddProductsHandller} showAllProductsHandler={showAllProductsHandler} />
+        <SideBar showAddFirmHandler={showAddFirmHandler} showAddProductsHandller={showAddProductsHandller} showAllProductsHandler={showAllProductsHandler} 
+        showFirmTitle={showFirmTitle} />
         {showLogin && <Login showWelcomeHandler={showWelcomeHandler}/>}
         {showRegister && <Register showLoginHandler={showLoginHandler}/>}
         {showAddFirm && showLogout && <AddFirm />}

@@ -31,13 +31,7 @@ const productSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"Firm"
         }
-    ],
-    products:[
-        {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
-        }
-    ],
+    ]
 })
 
 const Product=mongoose.model("Product",productSchema);

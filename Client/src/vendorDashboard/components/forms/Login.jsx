@@ -24,15 +24,18 @@ const Login = ({showWelcomeHandler}) => {
         localStorage.setItem("loginToken",data.token);
         showWelcomeHandler();
       }
-      const vendorId = data.vendorId
+      const vendorId = data.vendorId;
       console.log("checking for VendorId:",vendorId)
       const vendorResponse = await fetch(`${API_URL}/vendor/single-vendor/${vendorId}`)
       const vendorData = await vendorResponse.json();
       if(vendorResponse.ok){
-        const vendorFirmId = vendorData.vendorFirmId;
+        const vendorFirmId = vendorData.vendor.firm[0]._id;
+        const vendorFirmName = vendorData.vendor.firm[0].firmname;
+        console.log("vendor FirmName:",vendorFirmName);
         localStorage.setItem('firmId', vendorFirmId);
+        localStorage.setItem('firmName', vendorFirmName);
+        window.location.reload();
       }
-      window.location.reload();
     } catch (error) {
       console.error(error);
     }

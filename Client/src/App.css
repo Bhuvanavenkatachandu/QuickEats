@@ -1,234 +1,225 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    background-color: #f5f6fa;
 }
 
-.navSection{
+/* Navbar */
+.navSection {
     height: 80px;
     display: flex;
     justify-content: space-between;
-    background-color: orangered;
     align-items: center;
+    background-color: orangered;
     padding: 0 20px;
     color: white;
     font-size: large;
 }
-.sideBar-Section{
+
+/* Sidebar */
+.sideBar-Section {
     width: 100%;
     max-width: 15%;
     height: 90vh;
     padding-top: 10px;
     background-color: lightgray;
 }
-.sideBar-Section ul li{
+
+.sideBar-Section ul li {
     list-style: none;
     margin-bottom: 20px;
     font-weight: 500;
     font-size: medium;
     cursor: pointer;
 }
-.collectionSection{
+
+/* Main Collection Section */
+.collectionSection {
     display: flex;
 }
 
-/*login Section*/
+/* Login and Register Section */
+.loginSection,
+.registerSection {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-.loginSection{
+.authForm {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.authForm h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2f3640;
+}
+
+.authForm label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.authForm input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.authForm input:focus {
+    border-color: #2f3640;
+}
+
+.submitButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.submitButton button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: orangered;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submitButton button:hover {
+    background-color: #ff4500;
+}
+
+/* Firm Section */
+.firmSection {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
-.regesterSection{
+
+.tableform {
     width: 100%;
+    max-width: 600px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.authForm label{
-    width: 100%;
-    max-width: 55%;
-    font-weight: 400;
-}
-.authForm{
-    width: 100%;
-    max-width: 50%;
-    margin-top: -230px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    gap: 15px;
     border: 1px solid grey;
     border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.authForm input{
+.tableform input {
     width: 100%;
-    max-width: 55%;
-    height: 1.4rem;
-}
-
-/*frim section*/
-
-.firmSection{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.tableform{
-    width: 100%;
-    max-width: 50%;
-    margin-top: -100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px solid grey;
-    border-radius: 10px;
-}
-.tableform input{
-    width: 100%;
-    max-width: 85%;
     height: 35px;
     margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
-.tableform label{
-    width: 100%;
-    max-width: 85%;
+
+.tableform label {
     font-weight: 600;
+    margin-bottom: 5px;
 }
 
-/* checkboxinp */
+/* Checkbox Sections */
+.checkInp,
+.check-Inp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
 
-.checkInp{
+.checkInp label,
+.check-Inp > label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.inputsContainer,
+.inputs-Container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.checkboxContainer,
+.checkbox-Container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 48%;
+}
+
+.checkboxContainer input,
+.checkbox-Container input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Radio Inputs */
+.radioInp {
     width: 100%;
     max-width: 85%;
-    display: flex;
-}
-.checkInp label{
-    width: 20%;
-}
-.inputsContainer{
-    display: flex;
-    width: 100%;
-}
-.checkboxContainer{
-    width: 100%;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.checkboxContainer label{
-    width: 100%;
-
-}
-
-.checkboxContainer input{
-    margin-left: -180px;
-}
-
-/* region */
-.check-Inp {
-  width: 100%;
-  max-width: 85%;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.check-Inp > label {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.inputs-Container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.checkbox-Container {
-  display: flex;
-  align-items: center;
-  width: 48%;
-}
-
-.checkbox-Container label {
-  margin-right: 8px;
-  font-size: 14px;
-}
-
-.checkbox-Container input[type="checkbox"] {
-  transform: scale(1.2);
-  cursor: pointer;
-}
-.radioInp {
-  width: 100%;
-  max-width: 85%;
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .inputLabel {
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
 }
 
 .radioGroup {
-  display: flex;
-  gap: 40px;
+    display: flex;
+    gap: 40px;
 }
 
 .radioOption {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 500;
-}
-
-
-
-/* App general styles */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f6fa;
-}
-
-/* Navbar */
-.navbar {
-    width: 100%;
-    height: 60px;
-    background-color: #2f3640;
-    color: #fff;
     display: flex;
     align-items: center;
-    padding: 0 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    gap: 8px;
+    font-weight: 500;
 }
 
-/* Main product section */
+/* Product Section */
 .productSection {
     max-width: 1200px;
-    margin: 80px auto 20px auto; /* leave space for navbar */
+    margin: 80px auto 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    overflow-x: auto; /* horizontal scroll if table is too wide */
+    overflow-x: auto;
 }
 
-/* Table styling */
 .product-table {
     width: 100%;
     border-collapse: collapse;
@@ -245,7 +236,7 @@ body {
     background-color: #2f3640;
     color: #fff;
     position: sticky;
-    top: 0; /* sticky header */
+    top: 0;
     z-index: 2;
 }
 
@@ -253,13 +244,11 @@ body {
     background-color: #f1f2f6;
 }
 
-/* Image styling */
 .product-table img {
     border-radius: 6px;
     object-fit: cover;
 }
 
-/* Delete button */
 .deleteBtn {
     background-color: #e84118;
     color: #fff;
@@ -274,8 +263,32 @@ body {
     background-color: #c23616;
 }
 
-/* Responsive adjustments */
+/* Page not found */
+.page-not-found {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 100px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
+    .authForm,
+    .tableform {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .inputsContainer,
+    .inputs-Container {
+        flex-direction: column;
+    }
+
+    .checkboxContainer,
+    .checkbox-Container {
+        width: 100%;
+    }
+
     .productSection {
         margin: 100px 10px 20px 10px;
         padding: 10px;
