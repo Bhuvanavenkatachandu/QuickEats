@@ -27,6 +27,9 @@ const addFirm = async (req, res) => {
     if(!vendor){
         return res.status(404).json({message: "vendor not found"});
     }
+    if (vendor.firm.length > 0) {
+      return res.status(400).json({ message: "vendor can have only one firm" });
+    }
 
     const newFirm = new Firm({
       firmname,

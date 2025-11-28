@@ -54,6 +54,7 @@ const LandingPage = () => {
     }else{
         alert('Please login to add products');
         setShowLogin(true);
+        setShowRegister(false);
     }
   }
   const showAddFirmHandler =()=>{
@@ -67,6 +68,7 @@ const LandingPage = () => {
     }else{
         alert('Please login to add firm');
         setShowLogin(true);
+        setShowRegister(false);
     }
   }
 
@@ -108,6 +110,7 @@ const LandingPage = () => {
     }else{
         alert('Please login to view products');
         setShowLogin(true);
+        setShowRegister(false);
     }
   };
 

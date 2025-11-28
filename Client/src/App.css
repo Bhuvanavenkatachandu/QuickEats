@@ -5,7 +5,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
-    background-color: #f5f6fa;
+    background-color: #e6f0ff; /* light blue background */
 }
 
 /* Navbar */
@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: orangered;
+    background-color: #0052cc; /* deep blue */
     padding: 0 20px;
     color: white;
     font-size: large;
@@ -26,7 +26,7 @@ body {
     max-width: 15%;
     height: 90vh;
     padding-top: 10px;
-    background-color: lightgray;
+    background-color: #cce0ff; /* light blue sidebar */
 }
 
 .sideBar-Section ul li {
@@ -35,6 +35,12 @@ body {
     font-weight: 500;
     font-size: medium;
     cursor: pointer;
+    color: #003d99; /* dark blue text */
+    transition: color 0.2s ease;
+}
+
+.sideBar-Section ul li:hover {
+    color: #0073e6;
 }
 
 /* Main Collection Section */
@@ -60,8 +66,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background: linear-gradient(145deg, #ffffff, #e6f0ff);
+    border: 1px solid #99c2ff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -69,25 +75,35 @@ body {
 .authForm h3 {
     text-align: center;
     margin-bottom: 20px;
-    color: #2f3640;
+    color: #003d99;
 }
 
 .authForm label {
     font-weight: 500;
     margin-bottom: 5px;
+    color: #0052cc;
+    transition: all 0.2s ease;
 }
 
 .authForm input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #99c2ff;
     border-radius: 8px;
     outline: none;
     font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 .authForm input:focus {
-    border-color: #2f3640;
+    border-color: #0073e6;
+    box-shadow: 0 0 8px rgba(0, 115, 230, 0.5);
+}
+
+.authForm input:not(:placeholder-shown) + label {
+    font-size: 12px;
+    color: #0073e6;
+    transform: translateY(-20px);
 }
 
 .submitButton {
@@ -99,16 +115,18 @@ body {
 .submitButton button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: orangered;
+    background-color: #0052cc;
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease, transform 0.2s ease;
 }
 
 .submitButton button:hover {
-    background-color: #ff4500;
+    background-color: #003d99;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 115, 230, 0.5);
 }
 
 /* Firm Section */
@@ -128,9 +146,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    border: 1px solid grey;
+    border: 1px solid #99c2ff;
     border-radius: 10px;
-    background-color: #fff;
+    background: linear-gradient(145deg, #ffffff, #e6f0ff);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
@@ -139,13 +157,20 @@ body {
     height: 35px;
     margin-bottom: 10px;
     padding: 5px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #99c2ff;
     border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.tableform input:focus {
+    border-color: #0073e6;
+    box-shadow: 0 0 8px rgba(0, 115, 230, 0.5);
 }
 
 .tableform label {
     font-weight: 600;
     margin-bottom: 5px;
+    color: #003d99;
 }
 
 /* Checkbox Sections */
@@ -161,6 +186,7 @@ body {
 .check-Inp > label {
     font-weight: 600;
     margin-bottom: 5px;
+    color: #0052cc;
 }
 
 .inputsContainer,
@@ -179,9 +205,18 @@ body {
 }
 
 .checkboxContainer input,
-.checkbox-Container input[type="checkbox"] {
+.checkbox-Container input[type="checkbox"],
+.radioOption input[type="radio"] {
     transform: scale(1.2);
     cursor: pointer;
+    accent-color: #0052cc;
+    transition: all 0.2s ease;
+}
+
+.checkboxContainer input:checked,
+.checkbox-Container input:checked,
+.radioOption input[type="radio"]:checked {
+    transform: scale(1.3);
 }
 
 /* Radio Inputs */
@@ -195,6 +230,7 @@ body {
     font-weight: 600;
     margin-bottom: 8px;
     display: block;
+    color: #0052cc;
 }
 
 .radioGroup {
@@ -214,7 +250,7 @@ body {
     max-width: 1200px;
     margin: 80px auto 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow-x: auto;
@@ -229,11 +265,12 @@ body {
 .product-table td {
     padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #99c2ff;
+    transition: all 0.3s ease;
 }
 
 .product-table th {
-    background-color: #2f3640;
+    background-color: #0052cc;
     color: #fff;
     position: sticky;
     top: 0;
@@ -241,7 +278,9 @@ body {
 }
 
 .product-table tr:hover {
-    background-color: #f1f2f6;
+    background-color: #cce0ff;
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px rgba(0, 82, 204, 0.2);
 }
 
 .product-table img {
@@ -250,17 +289,18 @@ body {
 }
 
 .deleteBtn {
-    background-color: #e84118;
+    background-color: #0073e6;
     color: #fff;
     padding: 6px 12px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .deleteBtn:hover {
-    background-color: #c23616;
+    background-color: #0052cc;
+    transform: scale(1.05);
 }
 
 /* Page not found */
@@ -269,6 +309,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-top: 100px;
+    color: #003d99;
 }
 
 /* Responsive */
