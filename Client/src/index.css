@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Colors - Modern Blue Palette */
+    --primary-color: #2563eb;
+    /* Royal Blue */
+    --primary-hover: #1d4ed8;
+    /* Darker Blue */
+    --primary-light: #eff6ff;
+    /* Very Light Blue for backgrounds */
+
+    --secondary-color: #475569;
+    /* Slate Gray */
+    --secondary-hover: #334155;
+
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+
+    /* Backgrounds & Surfaces */
+    --background-color: #f8fafc;
+    /* Very Light Blue-Gray */
+    --surface-color: #ffffff;
+    /* White */
+    --surface-hover: #f1f5f9;
+
+    /* Text */
+    --text-primary: #0f172a;
+    /* Very Dark Slate */
+    --text-secondary: #64748b;
+    /* Medium Slate */
+    --text-tertiary: #94a3b8;
+    /* Light Slate */
+    --text-white: #ffffff;
+
+    /* Borders & Dividers */
+    --border-color: #e2e8f0;
+    --border-focus: #93c5fd;
+
+    /* Shadows (Tailwind-like) */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    /* Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
+
+    /* Typography */
+    --font-family: 'Inter', sans-serif;
+
+    /* Spacing */
+    --header-height: 70px;
+    --sidebar-width: 260px;
+}
+
+/* Modern Reset & Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}

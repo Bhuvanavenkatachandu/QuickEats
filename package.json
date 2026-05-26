@@ -1,0 +1,26 @@
+{
+  "name": "quickeats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix Server\" \"npm run dev --prefix Client\"",
+    "install-all": "npm install && npm install --prefix Server && npm install --prefix Client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhuvanavenkatachandu/Swigy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Bhuvanavenkatachandu/Swigy/issues"
+  },
+  "homepage": "https://github.com/Bhuvanavenkatachandu/Swigy#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

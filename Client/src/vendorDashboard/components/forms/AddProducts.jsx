@@ -52,18 +52,18 @@ const AddProducts = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Product added successfully");
+        console.log("Product added successfully");
       }
-        setProductName("");
-        setPrice("");
-        setCategory([]);
-        setBestSeller(false);
-        setDescription("");
-        setFile(null);
-        
+      setProductName("");
+      setPrice("");
+      setCategory([]);
+      setBestSeller(false);
+      setDescription("");
+      setFile(null);
+
     } catch (error) {
       console.error("Error adding product:", error);
-      alert("Failed to add product");
+      console.error("Failed to add product");
     }
   };
 
