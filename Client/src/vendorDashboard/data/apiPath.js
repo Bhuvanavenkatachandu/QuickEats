@@ -4,4 +4,4 @@
 //  just update this ONE file instead of every component!
 // ============================================================
 
-export const API_URL = 'http://localhost:4000';
+export const API_URL = 'https://quickeats-backend-pudp.onrender.com';
